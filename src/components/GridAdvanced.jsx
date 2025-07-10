@@ -1,6 +1,6 @@
-import "./BasicGrid.styles.scss";
+import "./GridAdvanced.styles.scss";
 
-const BasicGird = () => {
+const GridAdvanced = () => {
   return (
     <div className="container">
       <div className="item item--1">1: Orange</div>
@@ -15,4 +15,4 @@ const BasicGird = () => {
   );
 };
 
-export default BasicGird;
+export default GridAdvanced;

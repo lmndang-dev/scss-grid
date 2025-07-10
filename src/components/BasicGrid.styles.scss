@@ -1,22 +1,45 @@
 .container {
-  background-color: #eee;
+  background-color: #ddd;
   width: 1000px;
+  height: 800px;
   margin: 30px auto;
 
   display: grid;
 
   //Implement height of the rows: 1st row is 150px and second row is 150px
   //grid-template-rows: 150px 150px;
-  grid-template-rows: repeat(2, 150px);
+  //grid-template-rows: repeat(2, 150px);
 
   //Implement height of the columns: 3 columns will have the height of 150px
   //grid-template-columns: 150px 150px 150px;
   //grid-template-columns: 50% 1fr 1fr; //Take most possible space
-  grid-template-columns: repeat(3, 1fr);
+  //grid-template-columns: repeat(2, 1fr);
 
   //grid-row-gap: 30px;
   //grid-column-gap: 30px;
   grid-gap: 30px;
+
+  //Styling row the explicit Grids
+  grid-auto-rows: 100px;
+  //Default value is row - change direction of explicit grid to column
+  //grid-auto-flow: column dense; // the dense is filling all the gaps of the grid
+  //grid-auto-columns: 0.5fr;
+
+  //Aligning Grid Items across the column (axis)
+  //align-items: center; // start / center / end {default value is stretch}
+
+  //Aligning Grid Items across the row (horizontally)
+  //justify-items: center; // start / center / end {default value is stretch}
+
+  // Align grid tracks to grids container - When the grid tracks is smaller than grid container
+  grid-template-rows: repeat(2, 100px);
+  grid-template-columns: repeat(2, 200px);
+
+  //Align the container across the row axis - like flex-box
+  justify-content: center; //start / centre / end / space-between / space-around / space-evenly
+
+  //Align ghe container across the column (horizontally) - like flex-box
+  align-content: center; // start / centre / end / space-between / space-around / space-evenly
 }
 
 .item {
@@ -33,14 +56,20 @@
     grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 3;
-    */
 
     grid-row: 2/3;
     grid-column: 2/3;
+    */
   }
 
   &--2 {
     background-color: green;
+
+    //Aligning this selected item across the column (axis)
+    //align-self: start;
+
+    //Aligning this selected item across the row (horizontally)
+    //justify-self: end;
   }
 
   &--3 {
@@ -57,14 +86,23 @@
     /*
     grid-row: 1/2;
     grid-column: 3/4;
-    */
+
     grid-area: 1 / 3 / 2 / 4;
+    */
   }
 
   &--6 {
     background-color: brown;
     // grid-row: 1 / 2;
     // grid-column: 2 /3;
-    grid-area: 1 / 2 / 2 / 3;
+    // grid-area: 1 / 2 / 2 / 3;
+  }
+
+  &--7 {
+    background-color: red;
+  }
+
+  &--8 {
+    background-color: black;
   }
 }
